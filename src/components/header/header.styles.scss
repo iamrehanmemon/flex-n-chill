@@ -1,0 +1,56 @@
+/* NAVBAR */
+
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  background-color: var(--black);
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  font-family: Poppins, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  height: 60px;
+  align-items: center;
+  list-style-type: none;
+}
+
+.nav .scrollEffect {
+  top: 0;
+  width: 100%;
+  transition: width 400ms ease;
+  left: initial;
+}
+
+.logo {
+  display: block;
+  margin-right: 30px;
+  font-size: 38px;
+  letter-spacing: -2px;
+  color: var(--red);
+  font-weight: 800;
+}
+
+.nav-items {
+  font-size: 16px;
+  margin-right: 24px;
+}
+
+.navbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 75%;
+}
+
+.navcontent {
+  display: flex;
+}
+
+.nav-icon {
+  height: 30px;
+  width: 30px;
+}

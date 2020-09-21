@@ -1,0 +1,119 @@
+.movie {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+select {
+  padding: 0.8em 5em 0.8em 1.2em;
+  font-size: 0.9em;
+  /* box-shadow: 0 10px 25px rgb(0, 0, 0.2); */
+  background: var(--black);
+  color: var(--white);
+  border: 0;
+  border: 1px solid white;
+  border-radius: 25px;
+  /* appearance: none; */
+}
+
+.custom-select {
+  position: relative;
+  width: 185px;
+}
+
+.custom-arrow {
+  display: block;
+  position: absolute;
+  /* top: 0; */
+  top: 2%;
+  right: 0;
+  background: rgb(13, 17, 19);
+  height: 96%;
+  width: 3em;
+  pointer-events: none;
+  border-radius: 25px;
+  border-right: 1px solid white;
+}
+
+.custom-arrow::before,
+.custom-arrow::after {
+  --size: 0.4em;
+
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+.custom-arrow::before {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-bottom: var(--size) solid white;
+  top: 40%;
+}
+
+.custom-arrow::after {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-top: var(--size) solid white;
+  top: 65%;
+}
+
+.title {
+  font: 700 40px / 48px Poppins, Helvetica, Arial, sans-serif;
+  padding: 0.5em 0;
+}
+
+/* div span {
+  font: 500 20px / 24px Poppins, Helvetica, Arial, sans-serif;
+  flex-direction: column;
+  align-items: flex-end;
+} */
+
+.poster {
+  height: 225px;
+  width: 175px;
+}
+
+.card {
+  margin-right: 15px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  transition: transform 200ms;
+}
+.card__body {
+  padding: 0 0.2em;
+}
+
+.card__name {
+  margin: 0.5em 0;
+}
+
+.card__desc {
+  margin: 0.2em 0;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .movie-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 480px) {
+  .movie {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}

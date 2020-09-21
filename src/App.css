@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700;800;900&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  /* padding: 0;
+  margin: 0; */
+}
+
+/* Themes */
+
+:root {
+  --white: rgb(255, 255, 255);
+  --black: rgb(13, 17, 19);
+  --red: #f84443;
+  --grey: rgb(36, 40, 42);
+  --blue: rgb(58, 134, 249);
+  --dblue: rgb(32, 98, 225);
+  --predark: #434343;
+}
+
+#App {
+  transition: background 500ms ease-in-out, color 1000ms ease-in-out;
+}
+
+.dark {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.light {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+#dark,
+#light {
+  color: #fff;
+}
+
+html {
+  font-size: 16px;
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 1.15;
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  font: 800 48px / 56px Poppins, Helvetica, Arial, sans-serif;
+}
+
+h3 {
+  text-align: center;
+}
+
+p {
+  font: 400 14px / 20px Poppins, Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(78, 159, 255);
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+
+iframe {
+  height: 350px;
+  width: 600px;
+}
+
+.container {
+  max-width: 1228px;
+  width: 90%;
+  margin: 0 auto;
+}
