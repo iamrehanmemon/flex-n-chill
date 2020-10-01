@@ -41,23 +41,13 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <Link to="" className="nav-items">
+                <Link to="/movies" className="nav-items">
                   Movies
                 </Link>
               </li>
               <li>
-                <Link to="" className="nav-items">
+                <Link to="/tv-shows" className="nav-items">
                   TV Shows
-                </Link>
-              </li>
-              <li>
-                <Link to="" className="nav-items">
-                  People
-                </Link>
-              </li>
-              <li>
-                <Link to="" className="nav-items">
-                  More
                 </Link>
               </li>
             </ul>

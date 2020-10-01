@@ -13,7 +13,7 @@ const Footer = () => {
           width="130"
           height="94"
         />
-        <Link className="link" href="#" className="rounded">
+        <Link className="link rounded" href="#">
           JOIN THE COMMUNITY
         </Link>
       </div>
