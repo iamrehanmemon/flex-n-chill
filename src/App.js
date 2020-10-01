@@ -1,13 +1,15 @@
 import React from "react";
-import Header from "../src/components/header/header.component";
-import "./App.css";
+import Header from "./components/header/header.component";
 import HomePage from "./pages/Homepage/homepage.component";
+import Footer from "./components/footer/footer.component";
+import "./App.css";
+
 
 const App = () => (
   <div id="App" className="dark">
     <Header />
     <HomePage />
-    <HomePage />
+    <Footer />
   </div>
 );
 

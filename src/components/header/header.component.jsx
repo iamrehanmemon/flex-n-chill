@@ -5,11 +5,13 @@ import { FiPlusCircle } from "react-icons/fi";
 import { AiOutlineSearch } from "react-icons/ai";
 import { FaSun } from "react-icons/fa";
 
-import "../header/header.styles.scss";
+import "./header.styles.scss";
 
 const themeSwitcher = () => {
   const App = document.getElementById("App");
+  const Nav = document.getElementById("Nav");
   App.classList.toggle("light");
+  Nav.classList.toggle("light");
 };
 
 const Header = () => {
@@ -28,7 +30,7 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="header">
+    <div className="header" id="Nav">
       <div className="nav">
         <div className="navbox">
           <div className="navcontent">
