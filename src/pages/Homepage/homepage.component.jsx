@@ -6,25 +6,53 @@ import Trailer from "../../components/trailer/trailer.component";
 
 import "./homepage.style.scss";
 
-const Featured_Api =
-  "https://api.themoviedb.org/3/discover/movie?api_key=755271bf57e0f95abab8489d7ef60135&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1";
-
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
+  const [tv, setTv] = useState([]);
 
   useEffect(() => {
-    fetch(Featured_Api)
-      .then((res) => res.json())
-      .then((data) => {
-        setMovies(data.results);
-        console.log(data.results);
-      });
+    const fetchData = () => {
+      fetch(
+        "https://api.themoviedb.org/3/discover/movie?api_key=755271bf57e0f95abab8489d7ef60135&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1"
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          setMovies(data.results);
+        });
+
+      fetch(
+        "https://api.themoviedb.org/3/discover/tv?api_key=755271bf57e0f95abab8489d7ef60135&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1"
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          setTv(data.results);
+        });
+    };
+
+    fetchData();
   }, []);
 
   return (
     <div className="homepage">
       <Hero />
-      <CardContainer data={movies} numberOfElements={"6"} />
+      <CardContainer
+        data={movies}
+        numberOfElements={"6"}
+        title="Movies"
+        option1="For Rent"
+        option2="Streaming"
+        option3="On TV"
+        option4="In Theaters"
+      />
+      <CardContainer
+        data={tv}
+        numberOfElements={"6"}
+        title="TV Shows"
+        option1="For Rent"
+        option2="Streaming"
+        option3="On TV"
+        option4="In Theaters"
+      />
       <Trailer />
     </div>
   );
