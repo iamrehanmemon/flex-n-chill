@@ -8,7 +8,7 @@ import Footer from "./components/footer/footer.component";
 // Pages
 import HomePage from "./pages/Homepage/homepage.component";
 import MoviePage from "./pages/MoviePage/moviepage.component.jsx";
-import { TvShowPage } from "./pages/Tv-show-page/TvShowPage";
+import TvShowPage from "./pages/Tv-show-page/tvpage.component";
 
 import "./App.scss";
 

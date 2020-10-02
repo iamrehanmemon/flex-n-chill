@@ -20,7 +20,15 @@ const MoviePage = () => {
 
   return (
     <div className="moviepage">
-      <CardContainer data={movies} numberOfElements={"20"} />
+      <CardContainer
+        data={movies}
+        numberOfElements={"20"}
+        title="Movies"
+        option1="For Rent"
+        option2="Streaming"
+        option3="On TV"
+        option4="In Theaters"
+      />
     </div>
   );
 };

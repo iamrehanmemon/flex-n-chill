@@ -5,8 +5,9 @@
 
 .poster {
   height: 300px;
-  width: 180px;
+  // width: 180px;
   border-radius: 15px;
+  width: 100%;
 }
 
 .card,
@@ -16,8 +17,9 @@
   align-items: center;
   justify-content: center;
   // max-width: 250px;
+  // max-height: 500px;
   border-radius: 10px;
-  padding-right: auto;
+  padding-right: 10px;
 }
 
 .card:hover {
@@ -26,7 +28,14 @@
 
 .card__body {
   font: 700 40px / 48px Poppins, Helvetica, Arial, sans-serif;
-  padding: 0 0.2em;
+  padding-top: 0.3em;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  line-height: 1.15;
 }
 
 .card__name {
@@ -36,7 +45,19 @@
 
 .card__desc {
   margin: 0.2em 0;
-  text-align: center;
+  display: grid;
+  place-items: center;
+  background-color: white;
+  border-radius: 50px;
+  width: 35px;
+  position: absolute;
+  left: 158px;
+  top: -48px;
+
+  // height: ;
+  padding: 0.6em;
+  color: black;
+  // text-align: center;
 }
 
 // .card {
