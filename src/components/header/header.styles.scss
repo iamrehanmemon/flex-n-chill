@@ -8,6 +8,11 @@
   color: var(--white);
 }
 
+// .container {
+//   width: 90%;
+//   margin: 0 auto;
+// }
+
 .nav {
   display: flex;
   justify-content: center;
@@ -17,18 +22,20 @@
   height: 60px;
   align-items: center;
   list-style-type: none;
+  padding: 0;
 }
 
 .nav .scrollEffect {
   top: 0;
   width: 100%;
+  margin-left: 30px;
   transition: width 400ms ease;
   left: initial;
 }
 
 .logo {
   display: block;
-  margin-right: 30px;
+
   font-size: 38px;
   letter-spacing: -2px;
   color: var(--red);
@@ -37,7 +44,8 @@
 
 .nav-items {
   font-size: 16px;
-  margin-right: 24px;
+  margin: 15px;
+  position: relative;
 }
 
 .navbox {
@@ -45,6 +53,7 @@
   justify-content: space-between;
   align-items: center;
   width: 75%;
+  width: 1228px;
 }
 
 .navcontent {
@@ -54,4 +63,14 @@
 .nav-icon {
   height: 30px;
   width: 30px;
+}
+
+.search {
+  border-radius: 50px;
+  background-color: transparent;
+  color: grey;
+  position: absolute;
+  top: -16px;
+  left: -160px;
+  padding: 0.6em 1.5em;
 }

@@ -37,8 +37,9 @@ const HomePage = () => {
       <Hero />
       <CardContainer
         data={movies}
-        numberOfElements={"6"}
+        numberOfElements={"5"}
         title="Movies"
+        category="movie"
         option1="For Rent"
         option2="Streaming"
         option3="On TV"
@@ -46,8 +47,9 @@ const HomePage = () => {
       />
       <CardContainer
         data={tv}
-        numberOfElements={"6"}
+        numberOfElements={"5"}
         title="TV Shows"
+        category="tv"
         option1="For Rent"
         option2="Streaming"
         option3="On TV"

@@ -9,6 +9,7 @@ import Footer from "./components/footer/footer.component";
 import HomePage from "./pages/Homepage/homepage.component";
 import MoviePage from "./pages/MoviePage/moviepage.component.jsx";
 import TvShowPage from "./pages/Tv-show-page/tvpage.component";
+import GeneralPage from "./pages/General Info Page/general.component";
 
 import "./App.scss";
 
@@ -20,6 +21,9 @@ const App = () => (
         <Route exact path="/" component={HomePage} />
         <Route path="/movies" component={MoviePage} />
         <Route path="/tv-shows" component={TvShowPage} />
+        {/* <Route path="/general-page" component={GeneralPage} /> */}
+        <Route path="/movie/:id" component={GeneralPage} />
+        <Route path="/tv/:id" component={GeneralPage} />
         <Footer />
       </div>
     </Switch>

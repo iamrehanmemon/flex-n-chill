@@ -24,6 +24,7 @@ const MoviePage = () => {
         data={movies}
         numberOfElements={"20"}
         title="Movies"
+        category="movie"
         option1="For Rent"
         option2="Streaming"
         option3="On TV"

@@ -23,6 +23,7 @@ const TvShowPage = () => {
         data={tv}
         numberOfElements={"20"}
         title="Tv Shows"
+        category="tv"
         option1="For Rent"
         option2="Streaming"
         option3="On TV"

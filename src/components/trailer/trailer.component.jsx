@@ -22,7 +22,7 @@ const Trailer = () => {
 
       <div className="trailer">
         <div className="card">
-          <div className="video__img">
+          <div>
             <iframe
               width="560"
               height="315"
@@ -33,14 +33,12 @@ const Trailer = () => {
             ></iframe>
           </div>
           <div className="trailer__body">
-            <h3 className="card__name">The Hauting</h3>
-            <p className="card__desc">
-              The Haunting of Bly Manor | Teaser Trailer | Netflix
-            </p>
+            <h3>The Hauting</h3>
+            <p>The Haunting of Bly Manor | Teaser Trailer | Netflix</p>
           </div>
         </div>
         <div className="card">
-          <div className="card__img">
+          <div>
             <iframe
               width="560"
               height="315"
@@ -50,15 +48,13 @@ const Trailer = () => {
               allowfullscreen
             ></iframe>
           </div>
-          <div className="card__body">
-            <h3 className="card__name">The Hauting</h3>
-            <p className="card__desc">
-              The Haunting of Bly Manor | Teaser Trailer | Netflix
-            </p>
+          <div className="trailer__body">
+            <h3>The Hauting</h3>
+            <p>The Haunting of Bly Manor | Teaser Trailer | Netflix</p>
           </div>
         </div>
         <div className="card">
-          <div className="card__img">
+          <div>
             <iframe
               width="560"
               height="315"
@@ -68,15 +64,13 @@ const Trailer = () => {
               allowfullscreen
             ></iframe>
           </div>
-          <div className="card__body">
-            <h3 className="card__name">The Hauting</h3>
-            <p className="card__desc">
-              The Haunting of Bly Manor | Teaser Trailer | Netflix
-            </p>
+          <div className="trailer__body">
+            <h3>The Hauting</h3>
+            <p>The Haunting of Bly Manor | Teaser Trailer | Netflix</p>
           </div>
         </div>
         <div className="card">
-          <div className="card__img">
+          <div>
             <iframe
               width="560"
               height="315"
@@ -86,29 +80,9 @@ const Trailer = () => {
               allowfullscreen
             ></iframe>
           </div>
-          <div className="card__body">
-            <h3 className="card__name">The Hauting</h3>
-            <p className="card__desc">
-              The Haunting of Bly Manor | Teaser Trailer | Netflix
-            </p>
-          </div>
-        </div>
-        <div className="card">
-          <div className="card__img">
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/Io0fBr1XBUA?controls=0"
-              frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
-          </div>
-          <div className="card__body">
-            <h3 className="card__name">The Hauting</h3>
-            <p className="card__desc">
-              The Haunting of Bly Manor | Teaser Trailer | Netflix
-            </p>
+          <div className="trailer__body">
+            <h3>The Hauting</h3>
+            <p>The Haunting of Bly Manor | Teaser Trailer | Netflix</p>
           </div>
         </div>
       </div>

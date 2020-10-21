@@ -4,7 +4,7 @@ import Card from "../card/card.component";
 
 import "./card-container.style.scss";
 
-const CardContainer = ({ data, numberOfElements, ...otherProps }) => {
+const CardContainer = ({ data, numberOfElements, category, ...otherProps }) => {
   return (
     <div className="container">
       <CardHeader
@@ -18,7 +18,9 @@ const CardContainer = ({ data, numberOfElements, ...otherProps }) => {
         {data.length > 0 &&
           data
             .slice(0, numberOfElements)
-            .map((cardData) => <Card key={cardData.id} {...cardData} />)}
+            .map((cardData) => (
+              <Card key={cardData.id} {...cardData} category={category} />
+            ))}
       </div>
     </div>
   );
