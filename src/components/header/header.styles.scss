@@ -1,7 +1,7 @@
 /* NAVBAR */
 
 .header {
-  position: fixed;
+  // position: fixed;
   width: 100%;
   z-index: 100;
   background-color: var(--black);
@@ -26,20 +26,22 @@
 }
 
 .nav .scrollEffect {
+  position: fixed;
   top: 0;
-  width: 100%;
-  margin-left: 30px;
-  transition: width 400ms ease;
   left: initial;
+  width: 100%;
+  transition: width 400ms ease;
+  background-color: var(--black);
+  padding: 0 0.8em;
 }
 
 .logo {
   display: block;
-
   font-size: 38px;
   letter-spacing: -2px;
   color: var(--red);
   font-weight: 800;
+  padding: 0 0.4em;
 }
 
 .nav-items {
@@ -52,8 +54,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 75%;
   width: 1228px;
+  height: 60px;
 }
 
 .navcontent {

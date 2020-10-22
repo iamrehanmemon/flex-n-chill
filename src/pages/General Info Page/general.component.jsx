@@ -22,17 +22,40 @@ const GeneralPage = ({ category, id }) => {
   }, [DetailsInfo_Api]);
 
   return (
-    <div className="preview">
-      <div className="left">
-        <img
-          className="poster"
-          src={IMG_Api + data.poster_path}
-          alt={data.title}
-        />
-      </div>
-      <div className="right">
-        <h3>{data.title || data.name}</h3>
-        <p>{data.vote_average}</p>
+    <div>
+      <div
+        className="custom_bg"
+        style={{
+          backgroundImage: `url(${IMG_Api + data.backdrop_path})`,
+          backgroundSize: "cover",
+          height: "100vh"
+        }}
+      >
+        <div className="overlay">
+          <div className="preview container">
+            <div className="preview-info">
+              {/* <img src={IMG_Api + data.backdrop_path} alt={data.title} /> */}
+              <h3 className="title">{data.title || data.name}</h3>
+              <p>{data.tagline}</p>
+              <p className="preview-title">
+                <i>Overview</i>
+              </p>
+              <p>{data.overview}</p>
+              <p>{data.vote_average}</p>
+              <p>
+                <b>Release date : </b>
+                {data.release_date}
+              </p>
+            </div>
+            <div className="preview-img">
+              <img
+                className="poster-img"
+                src={IMG_Api + data.poster_path}
+                alt={data.title}
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
