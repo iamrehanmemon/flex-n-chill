@@ -9,6 +9,11 @@
   width: 100%;
 }
 
+.card {
+  text-align: center;
+  align-self: start;
+}
+
 .card,
 .card__inner {
   display: flex;

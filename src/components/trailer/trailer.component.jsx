@@ -5,7 +5,7 @@ import "../trailer/trailer.style.scss";
 const Trailer = () => {
   return (
     <div className="container">
-      <div className="trailer-header ">
+      <div className="trailer-header">
         <span className="title">Latest Trailer</span>
         <div className="custom-select">
           <select>
@@ -30,6 +30,7 @@ const Trailer = () => {
               frameborder="0"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
+              title="#"
             ></iframe>
           </div>
           <div className="trailer__body">
@@ -46,6 +47,7 @@ const Trailer = () => {
               frameborder="0"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
+              title="#"
             ></iframe>
           </div>
           <div className="trailer__body">
@@ -62,6 +64,7 @@ const Trailer = () => {
               frameborder="0"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
+              title="#"
             ></iframe>
           </div>
           <div className="trailer__body">
@@ -78,6 +81,7 @@ const Trailer = () => {
               frameborder="0"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
+              title="#"
             ></iframe>
           </div>
           <div className="trailer__body">
