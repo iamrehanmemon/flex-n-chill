@@ -11,6 +11,7 @@ footer {
   margin-right: 40px;
   flex-direction: column;
   justify-content: space-between;
+  margin-top: 20px;
 }
 
 .rounded {
@@ -19,16 +20,28 @@ footer {
   padding: 8px 16px;
   transition: linear 0.1s;
   top: 30px;
-  left: 30px;
+  // left: 30px;
   position: relative;
 }
 
-.vl {
-  padding-left: 30px;
-  border-left: 2px solid white;
-  /* height: 300px; */
+.footer-link {
+  color: var(--text);
 }
 
-.link {
-  color: var(--text);
+@media (max-width: 480px) {
+  .footer_content {
+    padding: 40px;
+    align-items: center;
+  }
+  .footer-link {
+    color: var(--text);
+    align-items: center;
+  }
+}
+@media (min-width: 800px) {
+  .vl {
+    padding-left: 30px;
+    border-left: 2px solid white;
+    /* height: 300px; */
+  }
 }

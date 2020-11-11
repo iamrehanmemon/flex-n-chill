@@ -5,7 +5,7 @@ import "./footer.styles.scss";
 const Footer = () => {
   return (
     <footer className="single_column container">
-      <div>
+      <div className="footer_content">
         <img
           src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg"
           alt="The Movie Database (TMDb)"
@@ -13,29 +13,29 @@ const Footer = () => {
           width="130"
           height="94"
         />
-        <Link className="link rounded" href="#">
+        <Link className="footer-link rounded" href="#">
           JOIN THE COMMUNITY
         </Link>
       </div>
       <div className="footer_content vl">
-        <Link className="link" href="#">
+        <Link className="footer-link" href="#">
           THE BASICS
         </Link>
-        <Link className="link" href="#">
+        <Link className="footer-link" href="#">
           Contact Us
         </Link>
-        <Link className="link" href="#">
+        <Link className="footer-link" href="#">
           Careers
         </Link>
       </div>
       <div className="footer_content vl">
-        <Link className="link" href="#">
+        <Link className="footer-link" href="#">
           GET INVOLVED
         </Link>
-        <Link className="link" href="#">
+        <Link className="footer-link" href="#">
           Add New TV Show
         </Link>
-        <Link className="link" href="#">
+        <Link className="footer-link" href="#">
           Add New Movie
         </Link>
       </div>

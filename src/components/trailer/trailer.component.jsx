@@ -6,7 +6,7 @@ const Trailer = () => {
   return (
     <div className="container">
       <div className="trailer-header">
-        <span className="title">Latest Trailer</span>
+        <span className="title">Trending</span>
         <div className="custom-select">
           <select>
             <option value="Streaming">Streaming </option>

@@ -20,7 +20,7 @@ const App = () => (
   <Router>
     <Switch>
       <div id="App" className="dark">
-        <button onClick={signInWithGoogle}>Sign in with Google</button>
+        {/* <button onClick={signInWithGoogle}>Sign in with Google</button> */}
         <Header />
         <Route exact path="/" component={HomePage} />
         <Route path="/movies" component={MoviePage} />

@@ -5,6 +5,8 @@ import { FiPlusCircle } from "react-icons/fi";
 import { AiOutlineSearch } from "react-icons/ai";
 import { FaSun } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
+import { auth, signInWithGoogle } from "../../firebase/firebase.utils";
+// import { Searchbox } from "./../SearchBox/Searchbox";
 
 import "./header.styles.scss";
 
@@ -15,17 +17,7 @@ const themeSwitcher = () => {
   Nav.classList.toggle("light");
 };
 
-// const handleOnSubmit = (e) => {
-//   e.preventDefault();
-// };
-
-// const handleOnChange = (e) => {
-//   setSearchTerm(e.target.value);
-// };
-
 const Header = () => {
-  // const [searchTerm,setSearchTerm] = useState('');
-
   const handleScroll = () => {
     window.addEventListener("scroll", () => {
       var header = document.querySelector(".navbox");
@@ -66,14 +58,8 @@ const Header = () => {
           <div className="navcontent">
             <ul className="nav">
               <li className="nav-items">
-                {/* <form onSubmit={handleOnSubmit}></form> */}
-                {/* <input
-                  className="search"
-                  type="text"
-                  placeholder="Search.."
-                  // value={searchTerm}
-                  // onChange={handleOnChange}
-                /> */}
+                <input className="search" type="text" placeholder="Search.." />
+                {/* <Searchbox searchChange={this.onSearchChange} /> */}
               </li>
               <li className="nav-items">
                 <AiOutlineSearch className="nav-icon" />
@@ -90,19 +76,10 @@ const Header = () => {
               <li className="nav-items" onClick={themeSwitcher}>
                 <FaSun className="nav-icon" />
               </li>
-              <li className="nav-items">
+              <li className="nav-items" onClick={signInWithGoogle}>
                 <span className="row">
                   <FcGoogle className="nav-icon" />
-                  <span className="ml-1">
-                    Sign in with Google
-                    {/* <span className="google-blue">S</span>
-                    <span className="google-yellow">I</span>
-                    <span className="google-red">G</span>
-                    <span className="google-green">N</span>
-                    <span> </span>
-                    <span className="google-red">I</span>
-                    <span className="google-blue">N</span> */}
-                  </span>
+                  <span className="ml-1">Sign in with Google</span>
                 </span>
               </li>
             </ul>
