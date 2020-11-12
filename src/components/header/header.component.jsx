@@ -53,17 +53,25 @@ const Header = () => {
                   TV Shows
                 </Link>
               </li>
+              <li className="nav-items">
+                <div className="search-box">
+                  <input
+                    className="search-text"
+                    type="text"
+                    placeholder="Type to Search.."
+                  />
+                  <Link to="" classname="search-btn">
+                    <AiOutlineSearch className="nav-icon" />
+                  </Link>
+                </div>
+
+                {/* <Searchbox searchChange={this.onSearchChange} /> */}
+              </li>
             </ul>
           </div>
           <div className="navcontent">
             <ul className="nav">
-              <li className="nav-items">
-                <input className="search" type="text" placeholder="Search.." />
-                {/* <Searchbox searchChange={this.onSearchChange} /> */}
-              </li>
-              <li className="nav-items">
-                <AiOutlineSearch className="nav-icon" />
-              </li>
+              <li className="nav-items"></li>
 
               <li>
                 <Link className="nav-items">Join the Community</Link>

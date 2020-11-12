@@ -1,17 +1,10 @@
 /* NAVBAR */
 
 .header {
-  // position: fixed;
   width: 100%;
   z-index: 100;
-  // background-color: var(--black);
   color: var(--text);
 }
-
-// .container {
-//   width: 90%;
-//   margin: 0 auto;
-// }
 
 .nav {
   display: flex;
@@ -38,26 +31,13 @@
   font-family: Roboto;
 }
 
-// .google-blue {
-//   color: #4285f4;
-// }
-// .google-red {
-//   color: #db4437;
-// }
-// .google-yellow {
-//   color: #f4b400;
-// }
-// .google-green {
-//   color: #0f9d58;
-// }
-
 .nav .scrollEffect {
   position: fixed;
   top: 0;
   left: initial;
   width: 100%;
   transition: width 400ms ease;
-  // background-color: var(--black);
+
   padding: 0 0.8em;
   z-index: 100;
 }
@@ -94,12 +74,52 @@
   width: 30px;
 }
 
-.search {
-  border-radius: 50px;
-  background-color: transparent;
-  color: grey;
+// .search {
+//   border-radius: 50px;
+//   background-color: transparent;
+//   color: grey;
+//   position: absolute;
+//   top: -16px;
+//   left: -160px;
+//   padding: 0.6em 1.5em;
+// }
+
+.search-box {
   position: absolute;
-  top: -16px;
-  left: -160px;
-  padding: 0.6em 1.5em;
+  top: 50%;
+  left: 50%;
+  transform: translate(50%, -50%);
+  background: #2f3640;
+  height: 40px;
+  border-radius: 40px;
+  padding: 10px;
+}
+
+.search-txt {
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0;
+  color: --(text);
+  font-size: 16px;
+  transition: 0.4s;
+  line-height: 40px;
+  width: 0px;
+}
+
+.search-box:hover > .search-txt {
+  width: 240px;
+  padding: 0 6px;
+}
+
+.search-btn {
+  color: #e84118;
+  float: right;
+  width: 40px;
+  border-radius: 50%;
+  background: #2f3640;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
