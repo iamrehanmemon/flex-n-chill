@@ -123,3 +123,23 @@
   justify-content: center;
   align-items: center;
 }
+
+.abcd {
+  display: none;
+}
+
+@media (max-width: 480px) {
+}
+
+@media (max-width: 768px) {
+  .navbox {
+    display: none;
+  }
+  .abcd {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1228px;
+    height: 60px;
+  }
+}

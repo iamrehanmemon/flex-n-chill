@@ -1,0 +1,79 @@
+.sidebar {
+  position: fixed;
+  box-shadow: 2px 2px 50px rgb(0, 0, 0);
+  // border-radius: 1rem;
+  top: 0;
+  left: 0;
+  width: 20rem;
+  height: 100%;
+  overflow: scroll;
+  background: var(--primary);
+  color: var(--secondary);
+  font-family: "lineto-circular-pro-bold";
+  letter-spacing: 0.6px;
+  transform: translateX(-100%);
+  transition: all 0.5s ease;
+  opacity: 0;
+
+  h2 {
+    padding: 2rem;
+  }
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem 1rem 2rem;
+  cursor: pointer;
+  transition: all 0.75s ease-out;
+
+  img {
+    width: 30%;
+  }
+  &:hover {
+    background: var(--accent);
+  }
+}
+
+.sidebar-description {
+  padding-left: 1rem;
+  h3 {
+    font-size: 1rem;
+  }
+  h4 {
+    font-size: 0.8rem;
+    font-family: "lineto-circular-pro-book";
+  }
+}
+
+.active-sidebar {
+  transform: translateX(0%);
+  opacity: 1;
+}
+
+/* The emerging W3C standard
+   that is currently Firefox-only */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(155, 155, 155, 0.7) transparent;
+}
+
+/* Works on Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+  width: 5px;
+  height: 0;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(155, 155, 155, 0.7);
+  border-radius: 20px;
+  border: transparent;
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+  }
+}

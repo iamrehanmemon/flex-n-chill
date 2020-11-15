@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 
 import { Link } from "react-router-dom";
-import { FiPlusCircle } from "react-icons/fi";
+// import { FiPlusCircle } from "react-icons/fi";
 import { AiOutlineSearch } from "react-icons/ai";
 import { FaSun } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
+import { MdMenu } from "react-icons/md";
+// eslint-disable-next-line
 import { auth, signInWithGoogle } from "../../firebase/firebase.utils";
+// import Sidebar from "../sidebar/sidebar.component";
 // import { Searchbox } from "./../SearchBox/Searchbox";
 
 import "./header.styles.scss";
@@ -17,7 +20,11 @@ const themeSwitcher = () => {
   Nav.classList.toggle("light");
 };
 
-const Header = () => {
+const Header = ({ isSidebarOpen, setIsSidebarOpen }) => {
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
   const handleScroll = () => {
     window.addEventListener("scroll", () => {
       var header = document.querySelector(".navbox");
@@ -53,37 +60,19 @@ const Header = () => {
                   TV Shows
                 </Link>
               </li>
-              <li className="nav-items">
-                <div className="search-box">
-                  <input
-                    className="search-text"
-                    type="text"
-                    placeholder="Type to Search.."
-                  />
-                  <Link to="" classname="search-btn">
-                    <AiOutlineSearch className="nav-icon" />
-                  </Link>
-                </div>
-
-                {/* <Searchbox searchChange={this.onSearchChange} /> */}
-              </li>
             </ul>
           </div>
           <div className="navcontent">
             <ul className="nav">
-              <li className="nav-items"></li>
-
-              <li>
-                <Link className="nav-items">Join the Community</Link>
-              </li>
-
               <li className="nav-items">
-                <FiPlusCircle className="nav-icon" />
+                <Link to="" classname="search-btn">
+                  <AiOutlineSearch className="nav-icon" />
+                </Link>
               </li>
-
               <li className="nav-items" onClick={themeSwitcher}>
                 <FaSun className="nav-icon" />
               </li>
+
               <li className="nav-items" onClick={signInWithGoogle}>
                 <span className="row">
                   <FcGoogle className="nav-icon" />
@@ -92,6 +81,17 @@ const Header = () => {
               </li>
             </ul>
           </div>
+        </div>
+        <div className="abcd">
+          <Link to="" className="logo">
+            Popdog
+          </Link>
+          <li className="nav-items" onClick={themeSwitcher}>
+            <FaSun className="nav-icon" />
+          </li>
+          <li className="nav-items" onClick={toggleSidebar}>
+            <MdMenu className="nav-icon" />
+          </li>
         </div>
       </div>
     </div>

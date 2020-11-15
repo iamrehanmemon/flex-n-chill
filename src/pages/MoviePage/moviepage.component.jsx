@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 
 import CardContainer from "../../components/card-container/card-container.component";
 
-import Spinner from "../../components/Spinner/spinner.component";
 import "./moviepage.style.scss";
 
 const Featured_Api =

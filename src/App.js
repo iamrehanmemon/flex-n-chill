@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
+// eslint-disable-next-line
 import { auth, signInWithGoogle } from "./firebase/firebase.utils";
 
 // Components
 import Header from "./components/header/header.component";
+import Sidebar from "./components/sidebar/sidebar.component";
+
 import Footer from "./components/footer/footer.component";
 
 // Pages
@@ -16,22 +18,28 @@ import GeneralPage from "./pages/General Info Page/general.component";
 
 import "./App.scss";
 
-const App = () => (
-  <Router>
-    <Switch>
-      <div id="App" className="dark">
-        {/* <button onClick={signInWithGoogle}>Sign in with Google</button> */}
-        <Header />
-        <Route exact path="/" component={HomePage} />
-        <Route path="/movies" component={MoviePage} />
-        <Route path="/tv-shows" component={TvShowPage} />
-        {/* <Route path="/general-page" component={GeneralPage} /> */}
-        <Route path="/movie/:id" component={GeneralPage} />
-        <Route path="/tv/:id" component={GeneralPage} />
-        <Footer />
-      </div>
-    </Switch>
-  </Router>
-);
-
+const App = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  return (
+    <Router>
+      <Switch>
+        <div id="App" className="dark">
+          {/* <button onClick={signInWithGoogle}>Sign in with Google</button> */}
+          <Header
+            isSidebarOpen={isSidebarOpen}
+            setIsSidebarOpen={setIsSidebarOpen}
+          />
+          <Sidebar isSidebarOpen={isSidebarOpen} />
+          <Route exact path="/" component={HomePage} />
+          <Route path="/movies" component={MoviePage} />
+          <Route path="/tv-shows" component={TvShowPage} />
+          {/* <Route path="/general-page" component={GeneralPage} /> */}
+          <Route path="/movie/:id" component={GeneralPage} />
+          <Route path="/tv/:id" component={GeneralPage} />
+          <Footer />
+        </div>
+      </Switch>
+    </Router>
+  );
+};
 export default App;

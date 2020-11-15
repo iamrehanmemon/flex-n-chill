@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 
 import { useHistory } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+// import { useSelector, useDispatch } from "react-redux";
 
 import "./general.style.scss";
 
@@ -9,7 +10,7 @@ const IMG_Api = "https://image.tmdb.org/t/p/w1280";
 
 const GeneralPage = ({ category, id }) => {
   const isLogged = useSelector((state) => state.isLogged);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const history = useHistory();
   console.log(history.location);
   const DetailsInfo_Api = `https://api.themoviedb.org/3${history.location.pathname}?api_key=755271bf57e0f95abab8489d7ef60135&language=en-US`;
