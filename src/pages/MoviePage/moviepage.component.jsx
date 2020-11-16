@@ -9,7 +9,6 @@ const Featured_Api =
 
 const MoviePage = () => {
   const [movies, setMovies] = useState([]);
-  // const movies = ["1", "2", "3"];
   useEffect(() => {
     fetch(Featured_Api)
       .then((res) => res.json())

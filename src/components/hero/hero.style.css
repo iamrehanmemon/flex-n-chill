@@ -3,7 +3,6 @@
   flex-direction: column;
   align-items: center;
   position: relative;
-  padding-top: 100px;
 }
 
 .hero::before {
@@ -84,6 +83,9 @@
     display: flex;
     align-self: center;
   }
+  .hero__content h1 {
+    font-size: 48px;
+  }
 }
 
 @media (min-width: 480px) {
@@ -92,6 +94,5 @@
     display: grid;
     width: 175px;
     align-self: center;
-    
   }
 }

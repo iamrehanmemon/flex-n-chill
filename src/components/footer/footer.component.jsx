@@ -13,29 +13,29 @@ const Footer = () => {
           width="130"
           height="94"
         />
-        <Link className="footer-link rounded" href="#">
+        <Link className="footer-link rounded" to="#">
           JOIN THE COMMUNITY
         </Link>
       </div>
       <div className="footer_content vl">
-        <Link className="footer-link" href="#">
+        <Link className="footer-link" to="#">
           THE BASICS
         </Link>
-        <Link className="footer-link" href="#">
+        <Link className="footer-link" to="#">
           Contact Us
         </Link>
-        <Link className="footer-link" href="#">
+        <Link className="footer-link" to="#">
           Careers
         </Link>
       </div>
       <div className="footer_content vl">
-        <Link className="footer-link" href="#">
+        <Link className="footer-link" to="#">
           GET INVOLVED
         </Link>
-        <Link className="footer-link" href="#">
+        <Link className="footer-link" to="#">
           Add New TV Show
         </Link>
-        <Link className="footer-link" href="#">
+        <Link className="footer-link" to="#">
           Add New Movie
         </Link>
       </div>

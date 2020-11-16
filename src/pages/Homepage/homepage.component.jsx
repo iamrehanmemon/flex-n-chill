@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 
 import Hero from "../../components/hero/hero.component";
 import CardContainer from "../../components/card-container/card-container.component";
-import Trailer from "../../components/trailer/trailer.component";
 
 import "./homepage.style.scss";
 
@@ -32,14 +31,6 @@ const HomePage = () => {
     fetchData();
   }, []);
 
-  // if (movies.length === 0) {
-  //   return (
-  //     <div className="loader">
-  //       <ClipLoader />
-  //     </div>
-  //   );
-  // }
-
   return (
     <div className="homepage">
       <Hero />
@@ -63,7 +54,6 @@ const HomePage = () => {
         option3="On TV"
         option4="In Theaters"
       />
-      <Trailer />
     </div>
   );
 };

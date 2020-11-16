@@ -6,19 +6,16 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  /* padding: 0;
-  margin: 0; */
 }
 
 /* Themes */
-
 :root {
   --white: rgb(255, 255, 255);
   --black: rgb(13, 17, 19);
   --red: #f84443;
+  --dblue: #2062e1;
   --grey: rgb(36, 40, 42);
   --blue: rgb(58, 134, 249);
-  --dblue: #2062e1;
   --predark: #434343;
 }
 
@@ -52,7 +49,17 @@ body {
 }
 
 h1 {
-  font: 800 48px / 56px Poppins, Helvetica, Arial, sans-serif;
+  font-size: 32px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 800;
+  font-family: Poppins, Helvetica, Arial, sans-serif;
 }
 
 p {
@@ -77,4 +84,25 @@ img {
   max-width: 1228px;
   width: 90%;
   margin: 0 auto;
+}
+
+/* The emerging W3C standard
+   that is currently Firefox-only */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(155, 155, 155, 0.7) transparent;
+}
+
+/* Works on Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+  width: 5px;
+  height: 0;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(155, 155, 155, 0.7);
+  border-radius: 20px;
+  border: transparent;
 }

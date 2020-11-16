@@ -13,7 +13,7 @@ const Hero = () => (
       <p>
         Sign up with your Twitch or YouTube (soon!) account and watch all of
         your favorite streams here on Popdog. Want more info?
-        <Link className="link" href="#">
+        <Link className="link" to="#">
           Check out our video.
         </Link>
       </p>

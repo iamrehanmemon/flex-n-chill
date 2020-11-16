@@ -2,19 +2,17 @@ import React, { useEffect, useState } from "react";
 
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
-// import { useSelector, useDispatch } from "react-redux";
 
 import "./general.style.scss";
 
 const IMG_Api = "https://image.tmdb.org/t/p/w1280";
 
 const GeneralPage = ({ category, id }) => {
-  const isLogged = useSelector((state) => state.isLogged);
-  // const dispatch = useDispatch();
   const history = useHistory();
-  console.log(history.location);
-  const DetailsInfo_Api = `https://api.themoviedb.org/3${history.location.pathname}?api_key=755271bf57e0f95abab8489d7ef60135&language=en-US`;
   const [data, setData] = useState([]);
+  const DetailsInfo_Api = `https://api.themoviedb.org/3${history.location.pathname}?api_key=755271bf57e0f95abab8489d7ef60135&language=en-US`;
+
+  const isLogged = useSelector((state) => state.isLogged);
 
   useEffect(() => {
     fetch(DetailsInfo_Api)
@@ -38,7 +36,6 @@ const GeneralPage = ({ category, id }) => {
         <div className="overlay">
           <div className="preview container">
             <div className="preview-info">
-              {/* <img src={IMG_Api + data.backdrop_path} alt={data.title} /> */}
               <h3 className="title">{data.title || data.name}</h3>
               <p>{data.tagline}</p>
               <p className="preview-title">
