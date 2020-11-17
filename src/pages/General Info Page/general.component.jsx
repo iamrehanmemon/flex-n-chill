@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 
+import ScrollToTop from "../../components/scroll-to-top/scroll-to-top.component";
+
 import "./general.style.scss";
 
 const IMG_Api = "https://image.tmdb.org/t/p/w1280";
@@ -25,28 +27,31 @@ const GeneralPage = ({ category, id }) => {
 
   return (
     <div>
+      <ScrollToTop />
       <div
         className="custom_bg"
         style={{
           backgroundImage: `url(${IMG_Api + data.backdrop_path})`,
-          backgroundSize: "cover",
-          height: "100vh"
+          backgroundSize: "cover"
+          // height: "50vh"
         }}
       >
         <div className="overlay">
           <div className="preview container">
             <div className="preview-info">
               <h3 className="title">{data.title || data.name}</h3>
-              <p>{data.tagline}</p>
+              <h4>{data.tagline}</h4>
               <p className="preview-title">
                 <i>Overview</i>
               </p>
               <p>{data.overview}</p>
               <p>{data.vote_average}</p>
-              <p>
-                <b>Release date : </b>
-                {data.release_date}
-              </p>
+              {data.release_date ? (
+                <p>
+                  <b>Release date : </b>
+                  {data.release_date}
+                </p>
+              ) : null}
               {isLogged ? (
                 <button className="btn">
                   <span className="btn__text">Add To Watchlist +</span>

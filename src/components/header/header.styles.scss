@@ -31,7 +31,7 @@
   top: 0;
   left: initial;
   width: 100%;
-  transition: width 400ms ease;
+  transition: width 500ms ease;
 
   padding: 0 0.8em;
   z-index: 100;
@@ -48,8 +48,13 @@
 
 .nav-items {
   font-size: 16px;
-  margin: 15px;
+  margin: 8px;
   position: relative;
+}
+
+.google {
+  position: relative;
+  bottom: 9px;
 }
 
 .navbox {
@@ -58,6 +63,7 @@
   align-items: center;
   width: 1228px;
   height: 60px;
+  transition: background 500ms ease-in-out, color 1000ms ease-in-out;
 }
 
 .navcontent {
@@ -71,6 +77,44 @@
 
 .abcd {
   display: none;
+}
+
+//Search
+
+.search-bar {
+  height: 64px;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  right: 0;
+
+  .search-field {
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary);
+    color: var(--accent);
+    text-align: center;
+    font-family: lineto-circular-pro-book;
+    font-size: 28px;
+    border: none;
+  }
+
+  .close-search {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 0;
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+  .close-search:hover {
+    cursor: pointer;
+    opacity: 0.7;
+  }
 }
 
 @media (max-width: 768px) {

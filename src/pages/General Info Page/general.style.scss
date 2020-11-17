@@ -5,7 +5,7 @@
 }
 
 .custom_bg {
-  max-height: 602px;
+  height: 800px;
 }
 
 .preview {
@@ -13,15 +13,22 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding-top: 100px;
+  padding-top: 40px;
+  height: 100%;
 }
 
 .preview-info {
   width: 800px;
-}
-
-.title {
-  padding: 0.5em 0.1em;
+  .title {
+    margin: 0;
+  }
+  h4 {
+    margin-top: 8px;
+    margin-bottom: 40px;
+  }
+  p {
+    margin: 16px 0;
+  }
 }
 
 .preview-title {
@@ -36,5 +43,15 @@
 }
 
 .poster-img {
+  display: block;
   border-radius: 150px;
+}
+
+@media (max-width: 768px) {
+  .poster-img {
+    display: none;
+  }
+  .custom_bg {
+    width: 100vw;
+  }
 }

@@ -6,7 +6,7 @@ export const CardHeader = ({ title, ...otherProps }) => {
   return (
     <div className="card-header">
       <span className="title">{title}</span>
-      <div className="custom-select">
+      {/* <div className="custom-select">
         <select>
           <option value="Streaming">{otherProps.option1}</option>
           <option value="On TV">{otherProps.option2}</option>
@@ -14,7 +14,7 @@ export const CardHeader = ({ title, ...otherProps }) => {
           <option value="In Theaters">{otherProps.option4}</option>
         </select>
         <span className="custom-arrow"></span>
-      </div>
+      </div> */}
     </div>
   );
 };

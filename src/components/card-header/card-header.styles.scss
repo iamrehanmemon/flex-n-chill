@@ -7,8 +7,7 @@
 }
 
 .title {
-  font: 700 32px / 42px Poppins, Helvetica, Arial, sans-serif;
-  padding: 0.5em 0.2em;
+  font-size: 48px;
 }
 
 .custom-select {
@@ -80,5 +79,8 @@ select {
   .card-header {
     flex-direction: column;
     align-items: flex-start;
+  }
+  .title {
+    font-size: 28px;
   }
 }

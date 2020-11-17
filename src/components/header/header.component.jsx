@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 
 import { Link } from "react-router-dom";
-// import { FiPlusCircle } from "react-icons/fi";
-import { AiOutlineSearch } from "react-icons/ai";
-import { FaSun } from "react-icons/fa";
+
+import { AiOutlineSearch, AiOutlineClose } from "react-icons/ai";
+import { VscColorMode } from "react-icons/vsc";
 import { FcGoogle } from "react-icons/fc";
+
 import { MdMenu } from "react-icons/md";
 // eslint-disable-next-line
 import { auth, signInWithGoogle } from "../../firebase/firebase.utils";
 import Sidebar from "../sidebar/sidebar.component";
-// import { Searchbox } from "./../SearchBox/Searchbox";
 
 import "./header.styles.scss";
 
@@ -24,9 +24,14 @@ const themeSwitcher = () => {
 
 const Header = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isSearchbarOpen, setIsSearchbarOpen] = useState(false);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  const toggleSearchbar = () => {
+    setIsSearchbarOpen(!isSearchbarOpen);
   };
 
   const handleScroll = () => {
@@ -44,61 +49,81 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="nav">
-      <div className="navbox dark">
-        <div className="navcontent">
-          <ul className="nav">
-            <li>
-              <Link to="/" className="logo">
-                Popdog
-              </Link>
-            </li>
-            <li>
-              <Link to="/movies" className="nav-items">
-                Movies
-              </Link>
-            </li>
-            <li>
-              <Link to="/tv-shows" className="nav-items">
-                TV Shows
-              </Link>
-            </li>
-          </ul>
+    <header>
+      {isSearchbarOpen ? (
+        <div className="nav">
+          <div className="search-bar container row">
+            <input
+              className="search-field"
+              type="text"
+              placeholder="Type and Hit Enter..."
+            />
+            <span className="close-search">
+              <AiOutlineClose className="nav-icon" onClick={toggleSearchbar} />
+            </span>
+          </div>
         </div>
-        <div className="navcontent">
-          <ul className="nav">
-            <li className="nav-items">
-              <Link to="#">
-                <AiOutlineSearch className="nav-icon" />
-              </Link>
-            </li>
-            <li className="nav-items" onClick={themeSwitcher}>
-              <FaSun className="nav-icon" />
-            </li>
-            <li className="nav-items" onClick={signInWithGoogle}>
-              <span className="row">
-                <FcGoogle className="nav-icon" />
-                <span className="ml-1">Sign in with Google</span>
-              </span>
-            </li>
-          </ul>
+      ) : (
+        <div className="nav">
+          <div className="navbox dark">
+            <div className="navcontent">
+              <ul className="nav">
+                <li>
+                  <Link to="/" className="logo">
+                    Popdog
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/movies" className="nav-items">
+                    Movies
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/tv-shows" className="nav-items">
+                    TV Shows
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div className="navcontent">
+              <ul className="nav">
+                <li className="nav-items">
+                  <span onClick={toggleSearchbar}>
+                    <AiOutlineSearch className="nav-icon" />
+                  </span>
+                </li>
+                <li className="nav-items" onClick={themeSwitcher}>
+                  <VscColorMode className="nav-icon" />
+                </li>
+                <li className="nav-items" onClick={signInWithGoogle}>
+                  <FcGoogle className="nav-icon" />
+                  <span className="ml-1 google">Sign in with Google</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="abcd">
+            <Link to="" className="logo">
+              Popdog
+            </Link>
+            <div className="row">
+              <li className="nav-items">
+                <span onClick={toggleSearchbar}>
+                  <AiOutlineSearch className="nav-icon" />
+                </span>
+              </li>
+              <li className="nav-items" onClick={themeSwitcher}>
+                <VscColorMode className="nav-icon" />
+              </li>
+              <li className="nav-items" onClick={toggleSidebar}>
+                <MdMenu className="nav-icon" />
+              </li>
+            </div>
+          </div>
         </div>
-      </div>
-      <div className="abcd">
-        <Link to="" className="logo">
-          Popdog
-        </Link>
-        <div className="row">
-          <li className="nav-items" onClick={themeSwitcher}>
-            <FaSun className="nav-icon" />
-          </li>
-          <li className="nav-items" onClick={toggleSidebar}>
-            <MdMenu className="nav-icon" />
-          </li>
-        </div>
-      </div>
+      )}
       <Sidebar isSidebarOpen={isSidebarOpen} />
-    </div>
+    </header>
   );
 };
 

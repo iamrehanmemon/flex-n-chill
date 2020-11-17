@@ -47,6 +47,10 @@
   opacity: 1;
 }
 
+.sidebar-link + .sidebar-link {
+  margin-top: 30px;
+}
+
 @media screen and (max-width: 768px) {
   .sidebar {
     width: 70%;

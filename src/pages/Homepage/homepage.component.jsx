@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import Hero from "../../components/hero/hero.component";
 import CardContainer from "../../components/card-container/card-container.component";
+import ScrollToTop from "../../components/scroll-to-top/scroll-to-top.component";
 
 import "./homepage.style.scss";
 
@@ -33,6 +34,7 @@ const HomePage = () => {
 
   return (
     <div className="homepage">
+      <ScrollToTop />
       <Hero />
       <CardContainer
         data={movies}

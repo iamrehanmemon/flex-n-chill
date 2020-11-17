@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import CardContainer from "../../components/card-container/card-container.component";
+import ScrollToTop from "../../components/scroll-to-top/scroll-to-top.component";
 
 import "./tvshowpage.style.scss";
 
@@ -19,6 +20,7 @@ const TvShowPage = () => {
 
   return (
     <div className="tvpage">
+      <ScrollToTop />
       <CardContainer
         data={tv}
         numberOfElements={"20"}
