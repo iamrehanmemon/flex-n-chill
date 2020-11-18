@@ -1,5 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
+import { useHistory } from "react-router-dom";
+
 import "./card.style.scss";
 const IMG_Api = "https://image.tmdb.org/t/p/w1280";
 
@@ -10,13 +12,21 @@ const Card = ({
   overview,
   vote_average,
   category,
-  id
+  id,
+  media_type
 }) => {
   const a = `/${category}/${id}`;
+  const b = `/${media_type}/${id}`;
+
+  const history = useHistory();
+
+  const getCategory = () => {
+    category ? history.push(a) : history.push(b);
+  };
 
   return (
     <div className="card">
-      <Link to={a}>
+      <div onClick={getCategory}>
         <div className="card__inner">
           <div className="card__img">
             <img className="poster" src={IMG_Api + poster_path} alt={title} />
@@ -26,7 +36,7 @@ const Card = ({
             <p className="card__desc">{vote_average}</p>
           </div>
         </div>
-      </Link>
+      </div>
     </div>
   );
 };

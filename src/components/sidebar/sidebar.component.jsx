@@ -15,6 +15,23 @@ const Sidebar = ({ isSidebarOpen }) => {
       : sidebar.classList.remove("active-sidebar");
   }, [isSidebarOpen]);
 
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
+
+  // const handleScroll = () => {
+  //   window.addEventListener("scroll", () => {
+  //     if (document.querySelector(".sidebar")) {
+  //       document
+  //         .querySelector(".sidebar")
+  //         .classList.toggle("scrollEffect", window.scrollY > 0);
+  //     }
+  //   });
+  // };
+
   return (
     <div className="sidebar dark">
       <h2>Flex-N-Chill</h2>
@@ -34,8 +51,8 @@ const Sidebar = ({ isSidebarOpen }) => {
             </li>
             <li className="nav-items sidebar-link" onClick={signInWithGoogle}>
               <span className="row">
+                <span className="sidebar-link">Sign in with</span>
                 <FcGoogle className="nav-icon" />
-                <span className="sidebar-link">Sign in</span>
               </span>
             </li>
           </div>

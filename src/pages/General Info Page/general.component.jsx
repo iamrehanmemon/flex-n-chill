@@ -21,7 +21,6 @@ const GeneralPage = ({ category, id }) => {
       .then((res) => res.json())
       .then((data) => {
         setData(data);
-        console.log(data);
       });
   }, [DetailsInfo_Api]);
 
