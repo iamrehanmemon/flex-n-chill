@@ -118,6 +118,9 @@ header {
   .search-field {
     width: 100%;
     height: 100%;
+    // background-color: var(--primary);
+    background-color: transparent;
+    color: var(--text);
     text-align: center;
     font-family: lineto-circular-pro-book;
     font-size: 28px;
