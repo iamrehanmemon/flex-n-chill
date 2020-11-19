@@ -24,6 +24,11 @@ const themeSwitcher = () => {
   MobileNav.classList.toggle("light");
 };
 
+const variants = {
+  open: { opacity: 1, x: 0 },
+  closed: { opacity: 0, x: "-100%" }
+};
+
 const Header = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isSearchbarOpen, setIsSearchbarOpen] = useState(false);
