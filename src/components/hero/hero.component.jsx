@@ -1,14 +1,34 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import { motion } from "framer-motion";
+
 import "../../components/hero/hero.style.css";
 import runningdog from "../../assets/images/running-dog.png";
 import youtubelogo from "../../assets/icons/youtube.svg";
 import twitchlogo from "../../assets/icons/twitch.svg";
 
+const container = {
+  hidden: { y: 50 },
+  show: {
+    y: 0,
+    transition: { duration: 0.25, ease: "easeOut" }
+  }
+};
+
+// const item = {
+//   hidden: { opacity: 0 },
+//   show: { opacity: 1 }
+// };
+
 const Hero = () => (
   <div className="hero container">
-    <div className="hero__content">
+    <motion.div
+      className="hero__content"
+      variants={container}
+      initial="hidden"
+      animate="show"
+    >
       <h1>A new way to find out what's on.</h1>
       <p>
         Sign up with your Twitch or YouTube (soon!) account and watch all of
@@ -17,10 +37,10 @@ const Hero = () => (
           Check out our video.
         </Link>
       </p>
-      <button className="btn">
+      <motion.button className="btn">
         <span className="btn__text">Sign Up with PopDog</span>
-      </button>
-    </div>
+      </motion.button>
+    </motion.div>
     <div className="hero__img">
       <div className="hero__img--1">
         <img
