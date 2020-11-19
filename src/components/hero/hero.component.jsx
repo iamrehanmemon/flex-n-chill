@@ -8,13 +8,15 @@ import runningdog from "../../assets/images/running-dog.png";
 import youtubelogo from "../../assets/icons/youtube.svg";
 import twitchlogo from "../../assets/icons/twitch.svg";
 
-const container = {
-  hidden: { y: 50 },
-  show: {
-    y: 0,
-    transition: { duration: 0.25, ease: "easeOut" }
-  }
-};
+import { container_neg_x, container_pos_x } from "../../animation";
+
+// const container_x = {
+//   hidden: { x: -2000 },
+//   show: {
+//     x: 0,
+//     transition: { duration: 0.5, ease: "easeOut" }
+//   }
+// };
 
 // const item = {
 //   hidden: { opacity: 0 },
@@ -25,7 +27,7 @@ const Hero = () => (
   <div className="hero container">
     <motion.div
       className="hero__content"
-      variants={container}
+      variants={container_neg_x}
       initial="hidden"
       animate="show"
     >
@@ -41,7 +43,12 @@ const Hero = () => (
         <span className="btn__text">Sign Up with PopDog</span>
       </motion.button>
     </motion.div>
-    <div className="hero__img">
+    <motion.div
+      className="hero__img"
+      variants={container_pos_x}
+      initial="hidden"
+      animate="show"
+    >
       <div className="hero__img--1">
         <img
           src={twitchlogo}
@@ -64,7 +71,7 @@ const Hero = () => (
       <div className="hero__img--2">
         <img src={runningdog} alt="running dog" />
       </div>
-    </div>
+    </motion.div>
   </div>
 );
 
