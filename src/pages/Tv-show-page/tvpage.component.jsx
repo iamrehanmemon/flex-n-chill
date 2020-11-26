@@ -3,6 +3,9 @@ import React, { useEffect, useState } from "react";
 import CardContainer from "../../components/card-container/card-container.component";
 import ScrollToTop from "../../components/scroll-to-top/scroll-to-top.component";
 
+import { motion } from "framer-motion";
+
+import { container_neg_x } from "../../animation";
 import "./tvshowpage.style.scss";
 
 const TvShowPage = () => {
@@ -19,7 +22,15 @@ const TvShowPage = () => {
   }, []);
 
   return (
-    <div className="tvpage">
+    <motion.div
+      className="tvpage"
+      // initial={{ opacity: 0 }}
+      // animate={{ opacity: 1 }}
+      // transition={{ easeout: [0.17, 0.67, 0.83, 0.67] }}
+      variants={container_neg_x}
+      initial="hidden"
+      animate="show"
+    >
       <ScrollToTop />
       <CardContainer
         data={tv}
@@ -31,7 +42,7 @@ const TvShowPage = () => {
         option3="On TV"
         option4="In Theaters"
       />
-    </div>
+    </motion.div>
   );
 };
 
