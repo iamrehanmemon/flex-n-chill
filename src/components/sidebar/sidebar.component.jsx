@@ -49,6 +49,11 @@ const Sidebar = ({ isSidebarOpen }) => {
                 TV Shows
               </Link>
             </li>
+            <li className="sidebar-link">
+              <Link to="/watchlist" className="nav-items">
+                Watchlist
+              </Link>
+            </li>
             <li className="nav-items sidebar-link" onClick={signInWithGoogle}>
               <span className="row">
                 <span className="sidebar-link">Sign in with</span>

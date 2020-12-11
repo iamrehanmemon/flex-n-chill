@@ -36,6 +36,12 @@
   font-size: 28px;
 }
 
+.btn:hover {
+  color: var(--white);
+  background: var(--dblue) none repeat scroll 0% 0%;
+  cursor: pointer;
+}
+
 .preview-img {
   display: flex;
   justify-content: center;

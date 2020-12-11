@@ -4,12 +4,15 @@ import { Link, useHistory } from "react-router-dom";
 
 import { AiOutlineSearch, AiOutlineClose } from "react-icons/ai";
 import { VscColorMode } from "react-icons/vsc";
+import { GoChecklist } from "react-icons/go";
 import { FcGoogle } from "react-icons/fc";
 import { MdMenu } from "react-icons/md";
 
 // eslint-disable-next-line
 import { auth, signInWithGoogle } from "../../firebase/firebase.utils";
+// import MobileNav from "../navbar/mobilenav.component";
 import Sidebar from "../sidebar/sidebar.component";
+import Dropdown from "../dropdown/dropdown";
 
 import "./header.styles.scss";
 
@@ -18,15 +21,18 @@ const themeSwitcher = () => {
   const Nav = document.querySelector(".navbox");
   const Sidebar = document.querySelector(".sidebar");
   const MobileNav = document.querySelector(".mobile-nav");
+  const Dropdown = document.querySelector(".dropdown");
   App.classList.toggle("light");
   Nav.classList.toggle("light");
   Sidebar.classList.toggle("light");
   MobileNav.classList.toggle("light");
+  Dropdown.classList.toggle("light");
 };
 
 const Header = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isSearchbarOpen, setIsSearchbarOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const [query, setQuery] = useState();
 
@@ -40,6 +46,10 @@ const Header = () => {
     setIsSearchbarOpen(!isSearchbarOpen);
     document.querySelector(".navbox").classList.toggle("visibility");
     document.querySelector(".mobile-nav").classList.toggle("visibility");
+  };
+
+  const toggleDropdownMenu = () => {
+    setIsDropdownOpen(!isDropdownOpen);
   };
 
   const handleScroll = () => {
@@ -133,9 +143,13 @@ const Header = () => {
                 <FcGoogle className="nav-icon" />
                 <span className="ml-1 google">Sign in with Google</span>
               </li>
+              <li className="nav-items" onClick={toggleDropdownMenu}>
+                <GoChecklist className="nav-icon" />
+              </li>
             </ul>
           </div>
         </div>
+
         <div className="mobile-nav dark">
           <Link to="" className="logo">
             Popdog
@@ -155,6 +169,7 @@ const Header = () => {
           </div>
         </div>
       </div>
+      {isDropdownOpen ? <Dropdown /> : null}
       <Sidebar isSidebarOpen={isSidebarOpen} />
     </header>
   );

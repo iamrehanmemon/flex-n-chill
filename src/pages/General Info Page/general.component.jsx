@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 
 import { useHistory } from "react-router-dom";
-import { useSelector } from "react-redux";
 
 import ScrollToTop from "../../components/scroll-to-top/scroll-to-top.component";
+
+import { WishListContext } from "../../context/WishListContext";
 
 import "./general.style.scss";
 
@@ -14,7 +15,7 @@ const GeneralPage = ({ category, id }) => {
   const [data, setData] = useState([]);
   const DetailsInfo_Api = `https://api.themoviedb.org/3${history.location.pathname}?api_key=755271bf57e0f95abab8489d7ef60135&language=en-US`;
 
-  const isLogged = useSelector((state) => state.isLogged);
+  const [wishList, setWishList] = useContext(WishListContext);
 
   useEffect(() => {
     fetch(DetailsInfo_Api)
@@ -23,6 +24,22 @@ const GeneralPage = ({ category, id }) => {
         setData(data);
       });
   }, [DetailsInfo_Api]);
+
+  const addToCart = () => {
+    setWishList([
+      {
+        title: data.title || data.name,
+        tagline: data.tagline,
+        status: data.status,
+        imdb_id: data.imdb_id,
+        popularity: data.popularity,
+        vote_average: data.vote_average,
+        release_date: data.release_data
+      },
+      ...wishList
+    ]);
+    console.log(wishList);
+  };
 
   return (
     <div>
@@ -51,13 +68,9 @@ const GeneralPage = ({ category, id }) => {
                   {data.release_date}
                 </p>
               ) : null}
-              {isLogged ? (
-                <button className="btn">
-                  <span className="btn__text">Add To Watchlist +</span>
-                </button>
-              ) : (
-                ""
-              )}
+              <button className="btn" onClick={addToCart}>
+                <span className="btn__text">Add To Watchlist +</span>
+              </button>
             </div>
             <div className="preview-img">
               <img
