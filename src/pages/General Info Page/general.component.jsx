@@ -33,6 +33,7 @@ const GeneralPage = ({ category, id }) => {
     setWishList([
       {
         title: data.title || data.name,
+        poster_path: data.poster_path,
         tagline: data.tagline,
         status: data.status,
         imdb_id: data.imdb_id,

@@ -114,7 +114,7 @@ const Header = () => {
             <ul className="nav">
               <li>
                 <Link to="/" className="logo">
-                  Popdog
+                  Flex-N-Chill
                 </Link>
               </li>
               <li>
@@ -125,6 +125,11 @@ const Header = () => {
               <li>
                 <Link to="/tv-shows" className="nav-items">
                   TV Shows
+                </Link>
+              </li>
+              <li>
+                <Link to="/watchlist" className="nav-items">
+                  Watchlist
                 </Link>
               </li>
             </ul>
@@ -152,7 +157,7 @@ const Header = () => {
 
         <div className="mobile-nav dark">
           <Link to="" className="logo">
-            Popdog
+            Flex-N-Chill
           </Link>
           <div className="row">
             <li className="nav-items">

@@ -1,22 +1,26 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 
 import "./dropdown.scss";
 
 import { WishListContext } from "../../context/WishListContext";
 
+const IMG_Api = "https://image.tmdb.org/t/p/w1280";
+
 export default function Dropdown() {
   const [wishList] = useContext(WishListContext);
+  console.log(wishList);
 
   return (
     <ul className="dropdown dark">
+      <h2>WishList</h2>
       {wishList
         ? wishList.map((wishListItem) => (
             <li className="dropdown-item">
               <h3>{wishListItem.title}</h3>
               <div className="row">
                 <img
-                  src="https://beautifulcoolwallpapers.files.wordpress.com/2011/07/naturewallpaper.jpg"
-                  alt=""
+                  src={IMG_Api + wishListItem.poster_path}
+                  alt={wishListItem.title}
                 />
                 <div className="wrap">
                   <p>{wishListItem.tagline}</p>
@@ -28,12 +32,12 @@ export default function Dropdown() {
                   </div>
                 </div>
               </div>
-              <button className="btn-block">
-                <span className="btn__text">Go to Wishlist</span>
-              </button>
             </li>
           ))
         : null}
+      <button className="btn-block" Link to="/watchlist">
+        <span className="btn__text">Go to Wishlist</span>
+      </button>
     </ul>
   );
 }

@@ -2,14 +2,16 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  margin: 20px;
-  border: 5px solid var(--text);
+  padding: 20px;
+  border: 5px solid white;
+  border-radius: 25px;
 }
 
 .btn-v2 {
   border: none;
-  padding: 15px 28px;
+  padding: 5px 8px;
   border-radius: 24px;
+  width: 120px;
   color: var(--white);
   background: var(--blue) none repeat scroll 0% 0%;
 }
@@ -41,24 +43,34 @@
   list-style-type: none;
   margin-left: 10px;
 
-  img {
+  .display-img {
     height: 150px;
     width: 120px;
     border-radius: 100px;
   }
 
   .list-wrap {
-    margin-left: 10px;
+    padding: 30px;
   }
 
   .list-row {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
   }
 }
-
+@media (max-width: 450px) {
+  .list-row {
+    flex-direction: column;
+  }
+}
 @media (min-width: 768px) {
+  .list-item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
   .list-row {
     justify-content: space-between;
   }
