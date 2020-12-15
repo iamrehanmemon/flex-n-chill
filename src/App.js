@@ -16,6 +16,8 @@ import SearchPage from "./pages/Searchpage/searchpage.component";
 import "./App.scss";
 
 const App = () => {
+  
+  
   return (
     <div id="App" className="dark">
       <Header />

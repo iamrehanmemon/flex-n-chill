@@ -24,18 +24,18 @@ const WatchlistPage = () => {
                     <p>{wishListItem.tagline}</p>
                     <div className="list-row">
                       <span>{wishListItem.vote_average}</span>
-                      <button className="btn-v2">
+                      <button className="btn">
                         <span className="btn__text">Watch Now</span>
                       </button>
                     </div>
                   </div>
                 </div>
-                <button className="btn-block">
-                  <span className="btn__text">Go to Wishlist</span>
-                </button>
               </li>
             ))
           : null}
+        <button className="btn-block">
+          <span className="btn__text">Go to Wishlist</span>
+        </button>
       </div>
     </div>
   );

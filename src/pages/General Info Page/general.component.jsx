@@ -25,6 +25,10 @@ const GeneralPage = ({ category, id }) => {
       });
   }, [DetailsInfo_Api]);
 
+  useEffect(() => {
+    localStorage.setItem("wishList", JSON.stringify(wishList));
+  }, [wishList]);
+
   const addToCart = () => {
     setWishList([
       {
@@ -38,7 +42,6 @@ const GeneralPage = ({ category, id }) => {
       },
       ...wishList
     ]);
-    console.log(wishList);
   };
 
   return (
