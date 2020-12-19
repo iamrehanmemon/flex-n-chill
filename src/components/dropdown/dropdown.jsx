@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 
 import "./dropdown.scss";
 
@@ -8,10 +9,9 @@ const IMG_Api = "https://image.tmdb.org/t/p/w1280";
 
 export default function Dropdown() {
   const [wishList] = useContext(WishListContext);
-  console.log(wishList);
 
   return (
-    <ul className="dropdown dark">
+    <ul className="dropdown">
       <h2>WishList</h2>
       {wishList
         ? wishList.map((wishListItem) => (
@@ -35,9 +35,11 @@ export default function Dropdown() {
             </li>
           ))
         : null}
-      <button className="btn-block" Link to="/watchlist">
-        <span className="btn__text">Go to Wishlist</span>
-      </button>
+      <Link to="/wishlist">
+        <button className="btn-block">
+          <span className="btn__text">Go to Wishlist</span>
+        </button>
+      </Link>
     </ul>
   );
 }

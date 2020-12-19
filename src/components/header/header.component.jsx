@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 
 import { Link, useHistory } from "react-router-dom";
 
@@ -9,8 +9,10 @@ import { FcGoogle } from "react-icons/fc";
 import { MdMenu } from "react-icons/md";
 
 // eslint-disable-next-line
-import { auth, signInWithGoogle } from "../../firebase/firebase.utils";
-// import MobileNav from "../navbar/mobilenav.component";
+import { auth, provider } from "../../firebase/firebase.utils";
+
+import { UserContext } from "../../context/UserContext";
+
 import Sidebar from "../sidebar/sidebar.component";
 import Dropdown from "../dropdown/dropdown";
 
@@ -21,15 +23,23 @@ const themeSwitcher = () => {
   const Nav = document.querySelector(".navbox");
   const Sidebar = document.querySelector(".sidebar");
   const MobileNav = document.querySelector(".mobile-nav");
-  const Dropdown = document.querySelector(".dropdown");
   App.classList.toggle("light");
   Nav.classList.toggle("light");
   Sidebar.classList.toggle("light");
   MobileNav.classList.toggle("light");
-  Dropdown.classList.toggle("light");
 };
 
 const Header = () => {
+  const [currentUser, setCurrentUser] = useContext(UserContext);
+
+  const signInWithGoogle = () => {
+    provider.setCustomParameters({ prompt: "select_account" });
+
+    auth
+      .signInWithPopup(provider)
+      .then((result) => setCurrentUser(result.user));
+  };
+
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isSearchbarOpen, setIsSearchbarOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -125,11 +135,6 @@ const Header = () => {
               <li>
                 <Link to="/tv-shows" className="nav-items">
                   TV Shows
-                </Link>
-              </li>
-              <li>
-                <Link to="/watchlist" className="nav-items">
-                  Watchlist
                 </Link>
               </li>
             </ul>

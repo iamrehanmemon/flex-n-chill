@@ -24,9 +24,6 @@ const TvShowPage = () => {
   return (
     <motion.div
       className="tvpage"
-      // initial={{ opacity: 0 }}
-      // animate={{ opacity: 1 }}
-      // transition={{ easeout: [0.17, 0.67, 0.83, 0.67] }}
       variants={container_neg_x}
       initial="hidden"
       animate="show"

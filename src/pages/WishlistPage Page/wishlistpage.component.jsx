@@ -1,18 +1,27 @@
 import React, { useContext } from "react";
 
 import { WishListContext } from "../../context/WishListContext";
+import { UserContext } from "../../context/UserContext";
 
-import "./watchlist.style.scss";
+import "./wishlist.style.scss";
 
 const IMG_Api = "https://image.tmdb.org/t/p/w1280";
 
-const WatchlistPage = () => {
+const WishlistPage = () => {
   const [wishList] = useContext(WishListContext);
+  const [currentUser] = useContext(UserContext);
 
   return (
     <div>
-      <div className="list container dark">
-        <h1>Watchlist</h1>
+      <div className="list container">
+        {currentUser !== null ? (
+          <div>
+            <h2>Hello {currentUser.displayName} </h2>
+            <h3>Wishlist Associated with {currentUser.email}</h3>
+          </div>
+        ) : (
+          <h2>Wishlist</h2>
+        )}
         <li className="list-item">
           {wishList
             ? wishList.map((wishListItem) => (
@@ -38,11 +47,8 @@ const WatchlistPage = () => {
               ))
             : null}
         </li>
-        <button className="btn-block">
-          <span className="btn__text">Go to Wishlist</span>
-        </button>
       </div>
     </div>
   );
 };
-export default WatchlistPage;
+export default WishlistPage;

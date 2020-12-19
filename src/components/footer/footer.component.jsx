@@ -13,8 +13,8 @@ const Footer = () => {
           width="130"
           height="94"
         /> */}
-        <Link to="/" className="footer-link logo">
-          Flex-N-Chill
+        <Link to="/" className="logo">
+          FnC
         </Link>
         <Link className="footer-link rounded" to="#">
           JOIN THE COMMUNITY

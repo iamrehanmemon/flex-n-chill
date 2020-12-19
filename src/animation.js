@@ -21,25 +21,3 @@ export const fade = {
     transition: { ease: "easeOut", duration: 0.75 }
   }
 };
-
-// export const pageAnimation = {
-//   hidden: {
-//     opacity: 0,
-//     y: 500
-//   },
-//   show: {
-//     opacity: 1,
-//     y: 0,
-//     transition: {
-//       duration: 0.9,
-//       when: "beforeChildren",
-//       staggerChildren: 0.25
-//     }
-//   },
-//   exit: {
-//     opacity: 0,
-//     transition: {
-//       duration: 0.9
-//     }
-//   }
-// };

@@ -5,13 +5,16 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 
 import { WishListProvider } from "./context/WishListContext";
+import { UserProvider } from "./context/UserContext";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <WishListProvider>
-        <App />
-      </WishListProvider>
+      <UserProvider>
+        <WishListProvider>
+          <App />
+        </WishListProvider>
+      </UserProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")

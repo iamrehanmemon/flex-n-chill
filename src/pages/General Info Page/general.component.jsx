@@ -53,7 +53,6 @@ const GeneralPage = ({ category, id }) => {
         style={{
           backgroundImage: `url(${IMG_Api + data.backdrop_path})`,
           backgroundSize: "cover"
-          // height: "50vh"
         }}
       >
         <div className="overlay">

@@ -1,13 +1,25 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 
+import { UserContext } from "../../context/UserContext";
+
 // eslint-disable-next-line
-import { auth, signInWithGoogle } from "../../firebase/firebase.utils";
+import { auth, provider } from "../../firebase/firebase.utils";
 
 import "./sidebar.styles.scss";
 
 const Sidebar = ({ isSidebarOpen }) => {
+  const [currentUser, setCurrentUser] = useContext(UserContext);
+
+  const signInWithGoogle = () => {
+    provider.setCustomParameters({ prompt: "select_account" });
+
+    auth
+      .signInWithPopup(provider)
+      .then((result) => setCurrentUser(result.user.displayName));
+  };
+
   useEffect(() => {
     const sidebar = document.querySelector(".sidebar");
     isSidebarOpen
@@ -15,27 +27,10 @@ const Sidebar = ({ isSidebarOpen }) => {
       : sidebar.classList.remove("active-sidebar");
   }, [isSidebarOpen]);
 
-  // useEffect(() => {
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
-
-  // const handleScroll = () => {
-  //   window.addEventListener("scroll", () => {
-  //     if (document.querySelector(".sidebar")) {
-  //       document
-  //         .querySelector(".sidebar")
-  //         .classList.toggle("scrollEffect", window.scrollY > 0);
-  //     }
-  //   });
-  // };
-
   return (
     <div className="sidebar dark">
       <h2>Flex-N-Chill</h2>
-
+      {currentUser && <h3> Hello {currentUser.displayName}</h3>}
       <div className="sidebar-content ">
         <div className="sidebar-item">
           <div className="sidebar-description">
