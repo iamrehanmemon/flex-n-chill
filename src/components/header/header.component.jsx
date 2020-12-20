@@ -30,6 +30,7 @@ const themeSwitcher = () => {
 };
 
 const Header = () => {
+  // eslint-disable-next-line
   const [currentUser, setCurrentUser] = useContext(UserContext);
 
   const signInWithGoogle = () => {
