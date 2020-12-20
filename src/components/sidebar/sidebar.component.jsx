@@ -45,8 +45,8 @@ const Sidebar = ({ isSidebarOpen }) => {
               </Link>
             </li>
             <li className="sidebar-link">
-              <Link to="/watchlist" className="nav-items">
-                Watchlist
+              <Link to="/wishlist" className="nav-items">
+                Wishlist
               </Link>
             </li>
             <li className="nav-items sidebar-link" onClick={signInWithGoogle}>

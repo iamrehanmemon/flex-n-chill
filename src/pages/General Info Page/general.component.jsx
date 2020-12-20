@@ -72,7 +72,7 @@ const GeneralPage = ({ category, id }) => {
                 </p>
               ) : null}
               <button className="btn" onClick={addToCart}>
-                <span className="btn__text">Add To Watchlist +</span>
+                <span className="btn__text">Add To Wishlist +</span>
               </button>
             </div>
             <div className="preview-img">
